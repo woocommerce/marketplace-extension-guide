@@ -23,6 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// phpcs:disable WordPress.Files.FileName
+
 /**
  * WooCommerce fallback notice.
  *
@@ -33,6 +35,10 @@ function woocommerce_extension_template_missing_wc_notice() {
 	echo '<div class="error"><p><strong>' . sprintf( esc_html__( 'WooCommerce Extension Template requires WooCommerce to be installed and active. You can download %s here.', 'woocommerce-extension-template' ), '<a href="https://woocommerce.com/" target="_blank">WooCommerce</a>' ) . '</strong></p></div>';
 }
 
+/*
+ * We're registering this outside of the class as from
+ * past experience, in some cases, activation does not fire.
+ */
 register_activation_hook( __FILE__, 'woocommerce_extension_template_activate' );
 
 /**
@@ -62,7 +68,13 @@ function woocommerce_extension_template_activate() {
 }
 
 if ( ! class_exists( 'WooCommerce_Extension_Template' ) ) :
-	// Declare all your defines here in one place.
+	/*
+	 * Declare all your defines here in one place.
+	 * This is our preference to define essential constants
+	 * globally. So that it can be accessed througout the
+	 * extension without having to call the main class
+	 * which can get really long.
+	 */
 	define( 'WC_EXTENSION_TEMPLATE_VERSION', '1.0.0' );
 	define( 'WC_EXTENSION_TEMPLATE_DB_VERSION', '1.0.0' );
 	define( 'WC_EXTENSION_TEMPLATE_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
@@ -71,6 +83,8 @@ if ( ! class_exists( 'WooCommerce_Extension_Template' ) ) :
 
 	/**
 	 * WC Extension Template Main class.
+	 * This is a "singleton" class but is not
+	 * required if you want to use your own method.
 	 *
 	 * @since 1.0.0
 	 */
@@ -145,7 +159,7 @@ if ( ! class_exists( 'WooCommerce_Extension_Template' ) ) :
 			// Admin specific dependencies.
 			if ( is_admin() ) {
 				require_once WC_EXTENSION_TEMPLATE_PLUGIN_PATH . '/includes/admin/class-wc-extension-template-privacy.php';
-				require_once WC_EXTENSION_TEMPLATE_PLUGIN_PATH . '/includes/admin/class-wc-extension-template-admin.php';	
+				require_once WC_EXTENSION_TEMPLATE_PLUGIN_PATH . '/includes/admin/class-wc-extension-template-admin.php';
 			} else {
 				require_once WC_EXTENSION_TEMPLATE_PLUGIN_PATH . '/includes/class-wc-extension-template-frontend.php';
 			}
@@ -153,6 +167,10 @@ if ( ! class_exists( 'WooCommerce_Extension_Template' ) ) :
 	}
 endif;
 
+/*
+ * We always want to load our extension when
+ * plugins_loaded action is triggered.
+ */
 add_action( 'plugins_loaded', 'woocommerce_extension_template_init', 10 );
 
 /**
