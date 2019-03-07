@@ -142,15 +142,12 @@ if ( ! class_exists( 'WooCommerce_Extension_Template' ) ) :
 		 * @since 1.0.0
 		 */
 		public function includes() {
-			require_once WC_EXTENSION_TEMPLATE_PLUGIN_PATH . '/includes/class-wc-extension-template-frontend.php';
-
 			// Admin specific dependencies.
 			if ( is_admin() ) {
-				if ( ! class_exists( 'WC_Abstract_Privacy' ) ) {
-					require_once WC_EXTENSION_TEMPLATE_PLUGIN_PATH . '/includes/admin/class-wc-extension-template-privacy.php';
-				}
-
+				require_once WC_EXTENSION_TEMPLATE_PLUGIN_PATH . '/includes/admin/class-wc-extension-template-privacy.php';
 				require_once WC_EXTENSION_TEMPLATE_PLUGIN_PATH . '/includes/admin/class-wc-extension-template-admin.php';	
+			} else {
+				require_once WC_EXTENSION_TEMPLATE_PLUGIN_PATH . '/includes/class-wc-extension-template-frontend.php';
 			}
 		}
 	}
