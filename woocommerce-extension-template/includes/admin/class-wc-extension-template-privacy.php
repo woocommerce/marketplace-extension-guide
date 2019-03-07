@@ -29,7 +29,7 @@ class WC_Extension_Template_Privacy extends WC_Abstract_Privacy {
 	 */
 	public function get_privacy_message() {
 		/* translators: %s - URL to document */
-		return wpautop( sprintf( __( 'By using this extension, you may be storing personal data or sharing data with an external service. <a href="%s" target="_blank">Learn more about how this works, including what you may want to include in your privacy policy.</a>', 'woocommerce-extension-template' ), 'https://docs.woocommerce.com/document' ) );
+		return wpautop( sprintf( __( 'ADD YOUR PRIVACY STATEMENT HERE. <a href="%s" target="_blank">Learn more about how this works, including what you may want to include in your privacy policy.</a>', 'woocommerce-extension-template' ), 'https://docs.woocommerce.com/document' ) );
 	}
 }
 
