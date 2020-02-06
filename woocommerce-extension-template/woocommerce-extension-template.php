@@ -57,7 +57,7 @@ function woocommerce_extension_template_activate() {
 	 * to point users in the right direction after
 	 * activation.
 	 */
-	$notice_html = '<strong>' . esc_html__( 'WooCommerce Extension Template has been activated!', 'woocommerce-extension-template' ) . '</strong><br><br>';
+	$notice_html = '<strong>' . esc_html__( 'WooCommerce Extension Template has been activated!!!', 'woocommerce-extension-template' ) . '</strong><br><br>';
 
 	WC_Admin_Notices::add_custom_notice( 'woocommerce_extension_template_activation', $notice_html );
 
