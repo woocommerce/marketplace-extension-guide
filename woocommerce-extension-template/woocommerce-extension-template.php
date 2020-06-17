@@ -8,11 +8,11 @@
  * Author URI: https://woocommerce.com
  * Text Domain: woocommerce-extension-template
  * Domain Path: /languages
- * Tested up to: 5.0
- * WC tested up to: 3.5
- * WC requires at least: 2.6
+ * Tested up to: 5.4
+ * WC tested up to: 4.0
+ * WC requires at least: 3.0
  *
- * Copyright: © 2019 WooCommerce.
+ * Copyright: © 2020 WooCommerce.
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * WooCommerce fallback notice.
  *
- * @since 1.13.0
+ * @since 1.0.0
  */
 function woocommerce_extension_template_missing_wc_notice() {
 	/* translators: %s WC download URL link. */
@@ -75,7 +75,7 @@ if ( ! class_exists( 'WooCommerce_Extension_Template' ) ) :
 	 * extension without having to call the main class
 	 * which can get really long.
 	 */
-	define( 'WC_EXTENSION_TEMPLATE_VERSION', '1.0.0' );
+	define( 'WC_EXTENSION_TEMPLATE_VERSION', '1.0.0' ); // WRCS: DEFINED_VERSION.
 	define( 'WC_EXTENSION_TEMPLATE_DB_VERSION', '1.0.0' );
 	define( 'WC_EXTENSION_TEMPLATE_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
 	define( 'WC_EXTENSION_TEMPLATE_MAIN_FILE', __FILE__ );

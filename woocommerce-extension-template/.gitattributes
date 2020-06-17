@@ -1,0 +1,26 @@
+# Common files to ignore on export (zip).
+
+.gitattributes export-ignore
+.gitmodules export-ignore
+.gitignore export-ignore
+.github export-ignore
+bin export-ignore
+tests export-ignore
+README.md export-ignore
+DEVELOPER.md export-ignore
+package.json export-ignore
+phpunit.xml.dist export-ignore
+.eslintrc export-ignore
+.eslintrc.js export-ignore
+.eslintignore export-ignore
+.tx export-ignore
+webpack.config.js export-ignore
+postcss.config.js export-ignore
+phpcs.xml export-ignore
+package-lock.json export-ignore
+composer.json export-ignore
+babel.config.js export-ignore
+.travis.yml export-ignore
+.editorconfig export-ignore
+phpunit.xml export-ignore
+jest-puppeteer.config.js export-ignore
