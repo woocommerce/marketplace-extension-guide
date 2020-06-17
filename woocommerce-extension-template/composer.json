@@ -1,0 +1,12 @@
+{
+    "name": "GITHUB_USER_OR_ORG_NAME/woocommerce-extension-template",
+    "description": "What your extension does.",
+    "homepage": "https://woocommerce.com/products/woocommerce-extension-template",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0+",
+    "archive": {
+        "exclude": [
+            "!/assets"
+        ]
+    }
+}
