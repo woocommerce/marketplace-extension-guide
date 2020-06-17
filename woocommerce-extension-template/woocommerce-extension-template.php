@@ -16,6 +16,8 @@
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
+ * @package woocommerce-extension-template
+ *
  * Woo: xxxxxx:xxxxxxxxxxxxxxxxxxxxxxx
  */
 
@@ -92,10 +94,10 @@ if ( ! class_exists( 'WooCommerce_Extension_Template' ) ) :
 		/**
 		 * The single instance of the class.
 		 *
-		 * @var $_instance
+		 * @var $instance
 		 * @since 1.0.0
 		 */
-		protected static $_instance = null;
+		protected static $instance = null;
 
 		/**
 		 * Constructor.
@@ -116,11 +118,11 @@ if ( ! class_exists( 'WooCommerce_Extension_Template' ) ) :
 		 * @return WooCommerce_Extension_Template
 		 */
 		public static function instance() {
-			if ( is_null( self::$_instance ) ) {
-				self::$_instance = new self();
+			if ( is_null( self::$instance ) ) {
+				self::$instance = new self();
 			}
 
-			return self::$_instance;
+			return self::$instance;
 		}
 
 		/**

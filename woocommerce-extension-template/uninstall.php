@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file describes all your uninstall logic.
+ *
+ */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
